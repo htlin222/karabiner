@@ -1,0 +1,4 @@
+
+] ;; main
+} ;; profiles
+;; to generate the karabiner.edn, run shell scripts by cat *.edn > ../karabiner.edn

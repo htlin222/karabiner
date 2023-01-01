@@ -1,0 +1,9 @@
+
+;; ----------------------------------------------------------------
+;; Part.6 Input-Sources 
+:input-sources {
+;; define input-source, these data can be founhd in Karabiner EventViewer gui
+     :us {:input_mode_id   ""
+          :input_source_id "com.apple.keylayout.US"
+          :language        "en"}
+} ;; input-source

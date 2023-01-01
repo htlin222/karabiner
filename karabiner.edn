@@ -1,0 +1,136 @@
+{
+;; ----------------------------------
+;; this is my goku file for karabiner
+;; ----------------------------------
+;; more info about goku: https://github.com/yqrashawn/GokuRakuJoudo
+;; more info about karabiner: https://karabiner-elements.pqrs.org/docs
+;; ----------------------------------
+;; article karabiner god mode by nikita: https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6
+;; examples: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/examples.org#profiles-wip
+;; tutorial: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md#basic8
+;; another article: https://blog.jkl.gg/hacking-your-keyboard/
+;; very well documented edn file by Kaushik Gopal: https://gist.github.com/kaushikgopal/ff7a92bbc887e59699c804b59074a126
+;; key names: https://github.com/yqrashawn/GokuRakuJoudo/blob/master/src/karabiner_configurator/keys_info.clj
+;; ----------------------------------------------------------------
+;; Part.1 The Profile 
+
+:profiles {:Default {
+    ;; "default true means" rules default goes into this rule if no profiles specified
+    :default true
+    ;; simultaneous key press threshold
+    ;; simlayer is implemented with to_if_alone and simultaneous key press feature
+    :sim     250
+    ;; to_delayed_action_delay_milliseconds
+    ;; checkout karabiner's documentation
+    ;; https://pqrs.org/osx/karabiner/json.html
+    ;; basically it means time after which the key press is count delayed
+    :delay   500
+    ;; https://pqrs.org/osx/karabiner/json.html#to-if-alone
+    ;; to_if_alone_timeout_milliseconds
+    ;; affects to_if_alone behavior
+    ;; simlayer is implemented with to_if_alone and simultaneous key press feature
+    :alone   1000
+    ;; to_if_held_down_threshold_milliseconds
+    ;; check the doc, I don't know what does this mean.
+    ;; maybe press this many milliseconds counts a "held" ?
+    :held    500
+}} ;; profiles
+;; ----------------------------------------------------------------
+;; Part.2 The Templates
+
+;; you can create templates for running shell commands. These follow clojure string template syntax.
+:templates {
+    :echo "echo \"%s\""
+    :open "open \"%s\""
+    :open-app "open -a \"%s\""
+} ;;templates 
+;; ----------------------------------------------------------------
+;; Part.3 Simlyaers 
+:simlayers {
+    :a-mode { :key :a }
+    :b-mode { :key :a }
+    :c-mode { :key :a }
+    :d-mode { :key :a }
+    :e-mode { :key :a }
+    :f-mode { :key :a }
+    :g-mode { :key :a }
+    :h-mode { :key :a }
+    :i-mode { :key :a }
+    :j-mode { :key :a }
+    :k-mode { :key :a }
+    :l-mode { :key :a }
+    :m-mode { :key :a }
+    :n-mode { :key :a }
+    :o-mode { :key :a }
+    :p-mode { :key :a }
+    :q-mode { :key :a }
+    :r-mode { :key :a }
+    :s-mode { :key :a }
+    :t-mode { :key :a }
+    :u-mode { :key :a }
+    :v-mode { :key :a }
+    :w-mode { :key :a }
+    :x-mode { :key :a }
+    :y-mode { :key :a }
+    :z-mode { :key :a }
+} ;; layers
+;; ----------------------------------------------------------------
+;; Part.4 Devices
+:devices{
+    ;; define devices
+    ;; vendor_id and product_id can be found in Karabiner EventViewer gui
+    :Pragmatic60 [{:vendor_id 4617 :product_id 43013}]
+} ;; devices
+
+
+;; ----------------------------------------------------------------
+;; Part.5 Applications 
+:applications  {;; define applications
+                :Browsers [;; these strings are regex to match applications bundle_identifiers
+                            ;; you can find bundle_identifiers in the Info.plist file of an applications
+                            ;; eg. in /Applications/Mail.app/Contents/Info.plist
+                            ;; search for "CFBundleIdentifier"
+                            ;; you can also find bundle_identifiers using command line:
+                            ;; osascript -e 'id of app "Google Chrome"'
+                            "^org\\.mozilla\\.firefox$"
+                            "^org\\.mozilla\\.firefoxdeveloperedition$"
+                            "^com\\.google\\.Chrome$"
+                            "^org\\.chromium\\.Chromium$"
+                            "^com\\.google\\.Chrome\\.canary$"
+                            "^com\\.apple\\.Safari$"]
+} ;; applications
+
+;; ----------------------------------------------------------------
+;; Part.6 Input-Sources 
+:input-sources {
+;; define input-source, these data can be founhd in Karabiner EventViewer gui
+     :us {:input_mode_id   ""
+          :input_source_id "com.apple.keylayout.US"
+          :language        "en"}
+} ;; input-source
+;; ----------------------------------------------------------------
+;; Part.7 Main 
+;; main contains multiple manipulators
+;; each manipulator has a description and multiple rules
+
+;; main                -> {:main [{:des "..." :rules [rule1 rule2 ...]}]}
+;; manipulator         -> {:des "..." :rules [rule1 rule2 ...]}
+;; manipulator's rules -> [rule1 rule2 ...]
+
+:main [{:des   "caps_lock to esc when pressed alone, to ctrl as modifier"
+        :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
+
+;; the following close ] is at the zz_the_end.edn
+;; modes keys are defined in the 03_simlayers.edn
+;; C T O S stands for left_command left_control left_option left_shift
+;; Q W E R stands for right_command right_control right_option right_shift
+
+{:des   "conditions demo"
+        :rules [:example-mode
+                [:l :!COi [:us :hhkb :Browsers :z-mode]]]
+}
+;; if example mode is activated, tap l key, will sent left_command left_control i
+;; if input is us, device is hhkb, and is in a browser
+] ;; main
+} ;; profiles
+;; to generate the karabiner.edn, run shell scripts by cat *.edn > ../karabiner.edn

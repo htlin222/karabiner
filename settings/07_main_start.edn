@@ -1,0 +1,14 @@
+
+;; ----------------------------------------------------------------
+;; Part.7 Main 
+;; main contains multiple manipulators
+;; each manipulator has a description and multiple rules
+
+;; main                -> {:main [{:des "..." :rules [rule1 rule2 ...]}]}
+;; manipulator         -> {:des "..." :rules [rule1 rule2 ...]}
+;; manipulator's rules -> [rule1 rule2 ...]
+
+:main [{:des   "caps_lock to esc when pressed alone, to ctrl as modifier"
+        :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
+
+;; the following close ] is at the zz_the_end.edn

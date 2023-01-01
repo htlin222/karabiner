@@ -1,0 +1,31 @@
+
+;; ----------------------------------------------------------------
+;; Part.3 Simlyaers 
+:simlayers {
+    :a-mode { :key :a }
+    :b-mode { :key :a }
+    :c-mode { :key :a }
+    :d-mode { :key :a }
+    :e-mode { :key :a }
+    :f-mode { :key :a }
+    :g-mode { :key :a }
+    :h-mode { :key :a }
+    :i-mode { :key :a }
+    :j-mode { :key :a }
+    :k-mode { :key :a }
+    :l-mode { :key :a }
+    :m-mode { :key :a }
+    :n-mode { :key :a }
+    :o-mode { :key :a }
+    :p-mode { :key :a }
+    :q-mode { :key :a }
+    :r-mode { :key :a }
+    :s-mode { :key :a }
+    :t-mode { :key :a }
+    :u-mode { :key :a }
+    :v-mode { :key :a }
+    :w-mode { :key :a }
+    :x-mode { :key :a }
+    :y-mode { :key :a }
+    :z-mode { :key :a }
+} ;; layers

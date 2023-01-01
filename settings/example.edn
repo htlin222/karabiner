@@ -1,0 +1,10 @@
+;; modes keys are defined in the 03_simlayers.edn
+;; C T O S stands for left_command left_control left_option left_shift
+;; Q W E R stands for right_command right_control right_option right_shift
+
+{:des   "conditions demo"
+        :rules [:example-mode
+                [:l :!COi [:us :hhkb :Browsers :z-mode]]]
+}
+;; if example mode is activated, tap l key, will sent left_command left_control i
+;; if input is us, device is hhkb, and is in a browser

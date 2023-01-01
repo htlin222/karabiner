@@ -1,0 +1,10 @@
+
+;; ----------------------------------------------------------------
+;; Part.2 The Templates
+
+;; you can create templates for running shell commands. These follow clojure string template syntax.
+:templates {
+    :echo "echo \"%s\""
+    :open "open \"%s\""
+    :open-app "open -a \"%s\""
+} ;;templates 

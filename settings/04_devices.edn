@@ -1,0 +1,9 @@
+
+;; ----------------------------------------------------------------
+;; Part.4 Devices
+:devices{
+    ;; define devices
+    ;; vendor_id and product_id can be found in Karabiner EventViewer gui
+    :Pragmatic60 [{:vendor_id 4617 :product_id 43013}]
+} ;; devices
+

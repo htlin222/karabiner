@@ -1,0 +1,17 @@
+
+;; ----------------------------------------------------------------
+;; Part.5 Applications 
+:applications  {;; define applications
+                :Browsers [;; these strings are regex to match applications bundle_identifiers
+                            ;; you can find bundle_identifiers in the Info.plist file of an applications
+                            ;; eg. in /Applications/Mail.app/Contents/Info.plist
+                            ;; search for "CFBundleIdentifier"
+                            ;; you can also find bundle_identifiers using command line:
+                            ;; osascript -e 'id of app "Google Chrome"'
+                            "^org\\.mozilla\\.firefox$"
+                            "^org\\.mozilla\\.firefoxdeveloperedition$"
+                            "^com\\.google\\.Chrome$"
+                            "^org\\.chromium\\.Chromium$"
+                            "^com\\.google\\.Chrome\\.canary$"
+                            "^com\\.apple\\.Safari$"]
+} ;; applications
